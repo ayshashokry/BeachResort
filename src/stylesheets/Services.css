@@ -1,0 +1,21 @@
+.services {
+    padding: 5rem 0;
+    background: var(--darkGrey);
+    text-align: center;
+}
+
+.service span {
+    display: inline-block;
+    color: var(--primaryColor);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.services h6 {
+    letter-spacing: var(--mainSpacing);
+}
+
+.services p {
+        letter-spacing: 2px;
+
+}

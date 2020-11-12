@@ -3,14 +3,12 @@ import { Header } from "../layout/Header";
 import { Banner } from "../layout/Banner";
 import { Link } from "react-router-dom";
 
-export const Rooms = () => {
+export const Errorr = () => {
   return (
     <div>
-      <Header header="roomsHeader">
-        <Banner title="Our Rooms">
-          <Link to="/" className="btn-primary">
-            Return to Home
-          </Link>
+      <Header>
+        <Banner title="404" subtitle="Page not found">
+          <Link to="/" className='btn-primary'>return to home</Link>
         </Banner>
       </Header>
     </div>

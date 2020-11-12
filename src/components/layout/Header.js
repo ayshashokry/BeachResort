@@ -1,14 +1,9 @@
-import React from 'react'
+import React from "react";
 
-export const Header = (children,header) => {
-    return (
-        <header className={header}>
-            {children}
-        </header>
-    )
-}
+export const Header = ({ children, header }) => {
+  return <header className={header}>{children}</header>;
+};
 
-
-Header.defaultProps={
-    header:'defaultHeader'
-}
+Header.defaultProps = {
+  header: "defaultHeader"
+};

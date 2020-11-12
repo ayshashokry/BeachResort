@@ -1,24 +1,68 @@
-import React, { Component } from 'react'
-import {Navbar,Nav, Button } from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-import logo from '../../images/logo.svg'
-import {FaAlignRight} from 'react-icons/fa'
-export class Navbarr extends Component {
+import React, { Component } from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import logo from "../../images/logo.svg";
+import "../../stylesheets/NavBarr.css";
+export class NavBarr extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navBackground: "transparent"
+    };
+  }
+  componentDidMount() {
+    document.addEventListener("scroll", () => {
+      const backgroundcolor = window.scrollY < 100 ? "transparent" : "#fff";
+
+      this.setState({ navBackground: backgroundcolor });
+    });
+  }
   render() {
     return (
-      <>
-       <Navbar bg="light" expand="lg">
-  <Navbar.Brand><Link to='/'><img scr={logo} alt="Beach Resort"/></Link></Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Link to='/'> Home </Link>
-      <Link to='/rooms'>Rooms</Link>
-     {/* <Button><FaAlignRight className='nav-icon'/></Button> */}
-    </Nav>
-  </Navbar.Collapse>
-</Navbar> 
-      </>
-    )
+      <Navbar
+        style={{ backgroundColor: this.state.navBackground }}
+        collapseOnSelect
+        fixed="top"
+        expand="lg"
+        className="navbar"
+      >
+        <Navbar.Brand href="/">
+          <img
+            src={logo}
+            className="navLogo mx-auto img-fluid"
+            alt="Fly-Pyramid-Logo"
+          />
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="">
+            <NavLink
+              exact
+              to="/"
+              activeStyle={{
+                color: "#af9a7d",
+                textDecoration: "none",
+                borderBottom: "5px solid #af9a7d"
+              }}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              exact
+              to="/rooms"
+              activeStyle={{
+                color: "#af9a7d",
+                textDecoration: "none",
+                borderBottom: "5px solid #af9a7d"
+              }}
+            >
+              Rooms
+            </NavLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      // </Container>
+    );
   }
 }
