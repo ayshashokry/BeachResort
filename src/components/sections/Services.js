@@ -43,8 +43,8 @@ export class Services extends Component {
           <Row>
             {this.state.services.map((service, index) => {
               return (
-                <Col md={6} lg={3} sm={12}>
-                  <article className="service" key={index}>
+                <Col md={6} lg={3} sm={12} key={index}>
+                  <article className="service">
                     <span>{service.icon}</span>
                     <h6>{service.title}</h6>
                     <p>{service.info}</p>

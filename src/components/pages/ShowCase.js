@@ -9,6 +9,7 @@ export default class ShowCase extends Component {
       steps: [
         {
           target: ".tour1",
+          disableBeacon: true,
           content: "This is a cool feature of my website!"
         },
         {
@@ -22,42 +23,37 @@ export default class ShowCase extends Component {
       ]
     };
   }
-  // handleClick = e => {
-  //   e.preventDefault();
+  handleClick = e => {
+    e.preventDefault();
 
-  //   this.setState({
-  //    run: true
-  //   });
-  // };
+    this.setState({
+      run: true
+    });
+  };
   render() {
     return (
       <div className="app">
         <ReactJoyride
           steps={this.state.steps}
-          run={this.state.run}
+          run={true}
           continuous
           showProgress
           showSkipButton
           styles={{
             options: {
-              // modal arrow and background color
-              arrowColor: "#eee",
-              backgroundColor: "#eee",
-              // page overlay color
+              arrowColor: "#e3ffeb",
+              backgroundColor: "#e3ffeb",
               overlayColor: "rgba(79, 26, 0, 0.4)",
-              //button color
-              primaryColor: "mediumaquamarine",
-              //text color
-              textColor: "#333",
-
-              //width of modal
-              width: 500,
-              //zindex of modal
+              primaryColor: "#000",
+              textColor: "#004a14",
+              width: 900,
               zIndex: 1000
             }
           }}
         />
-        <button onClick={this.handleClick}>Start</button>
+        <button title="Close" onClick={this.handleClick}>
+          Start
+        </button>
         <h3 className="tour1">Hey! I am a cool feature!</h3>{" "}
         <h3 className="tour2">Hey! I am a cool feature!</h3>{" "}
         <h3 className="tour3">Hey! I am a cool feature!</h3>

@@ -8,7 +8,9 @@ export const Errorr = () => {
     <div>
       <Header>
         <Banner title="404" subtitle="Page not found">
-          <Link to="/" className='btn-primary'>return to home</Link>
+          <Link to="/" className="btn-primary">
+            return to home
+          </Link>
         </Banner>
       </Header>
     </div>
