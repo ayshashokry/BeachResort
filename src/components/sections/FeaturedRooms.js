@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { RoomsContext } from "../../globalState/contexts/RoomsProvider";
 import { Title } from "../layout/Title";
-import { Loading } from "./Loading";
+import { Loading } from "../layout/Loading";
 import { Room } from "./Room";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 export default class FeaturedRooms extends Component {
   render() {
@@ -16,13 +16,7 @@ export default class FeaturedRooms extends Component {
       <section className="featured-rooms">
         <Title title="featured rooms" />
         <div className="featured-rooms-center">
-          {room.loading ? (
-            <Loading />
-          ) : (
-            <Container>
-              <Row>{featuredRooms}</Row>
-            </Container>
-          )}
+          {room.loading ? <Loading /> : featuredRooms}
         </div>
       </section>
     );

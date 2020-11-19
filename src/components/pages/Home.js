@@ -21,7 +21,7 @@ export const Home = () => {
       </Header>
       <Services />
       <FeaturedRooms />
-      <StyledHeader>Hello</StyledHeader>
+      {/* <StyledHeader>Hello</StyledHeader> */}
     </div>
   );
 };

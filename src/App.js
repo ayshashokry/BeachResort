@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // importing Components
 import { Home } from "./components/pages/Home";
-import { Rooms } from "./components/pages/Rooms";
+import { Rooms } from "./components/roomsPage/Rooms";
 import RoomDetails  from "./components/pages/RoomDetails";
 import { NavBarr } from "./components/layout/NavBarr";
 import ShowCase from "./components/pages/ShowCase";
